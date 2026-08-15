@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="株式会社ミナコン｜Web・デザイン・SNS・業務導線から、日本文化・不動産・アンティークまで。思いをつないで、やりたいをかたちにする。">
+<title>MINACON, LTD.｜思いをつないで、やりたいをかたちにする。</title>
+<style>
+:root{
+  --ink:#24231f;
+  --muted:#716e66;
+  --paper:#f8f6f0;
+  --white:#fffdf8;
+  --line:#ded9cc;
+  --accent:#a58b63;
+  --accent-soft:#e9dfcf;
+  --sage:#dfe4da;
+  --rose:#eaded9;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);background:var(--paper);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",sans-serif;
+  line-height:1.9;letter-spacing:.04em;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(calc(100% - 40px),var(--max));margin:auto}
+.serif{font-family:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
+header{
+  position:fixed;z-index:20;top:0;left:0;width:100%;
+  background:rgba(248,246,240,.86);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(222,217,204,.7)
+}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:Georgia,"Times New Roman",serif;font-size:20px;letter-spacing:.14em}
+.logo small{display:block;font-family:inherit;font-size:7px;letter-spacing:.3em;color:var(--muted);margin-top:-3px}
+nav{display:flex;gap:28px;font-size:12px;color:#555149}
+nav a:hover{color:var(--accent)}
+.hero{
+  min-height:100svh;padding:150px 0 80px;display:grid;place-items:center;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 25%,rgba(233,223,207,.8),transparent 25%),
+    radial-gradient(circle at 12% 82%,rgba(223,228,218,.65),transparent 22%),
+    var(--paper);
+}
+.hero:before{
+  content:"";position:absolute;width:42vw;height:42vw;border:1px solid rgba(165,139,99,.22);
+  border-radius:50%;right:-15vw;top:16vh;
+}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
+.hero h1{
+  font-size:clamp(42px,6vw,78px);line-height:1.28;font-weight:500;
+  margin:22px 0 28px;letter-spacing:.08em;
+}
+.hero-lead{font-size:16px;color:#555149;max-width:650px}
+.cta-row{display:flex;gap:12px;margin-top:38px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 25px;
+  border:1px solid var(--ink);font-size:12px;letter-spacing:.12em;transition:.25s;
+}
+.btn.primary{background:var(--ink);color:var(--white)}
+.btn:hover{transform:translateY(-2px)}
+.hero-art{position:relative;min-height:420px}
+.art-card{
+  position:absolute;border:1px solid rgba(36,35,31,.12);background:rgba(255,253,248,.72);
+  box-shadow:0 24px 60px rgba(40,35,25,.08);
+}
+.art-main{inset:25px 0 55px 50px;padding:30px;display:flex;align-items:flex-end;background:linear-gradient(145deg,#f0e8dc,#dce1d7)}
+.art-main span{font-family:Georgia,serif;font-size:80px;opacity:.55}
+.art-small{width:180px;height:180px;left:0;bottom:0;padding:24px;background:var(--white)}
+.art-small:after{content:"M";font-family:Georgia,serif;font-size:72px;color:var(--accent)}
+section{padding:120px 0}
+.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:50px}
+.section-head h2{font-size:clamp(30px,4vw,48px);font-weight:500;line-height:1.35;margin:8px 0 0}
+.section-intro{max-width:520px;color:var(--muted);font-size:14px}
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;align-items:start}
+.about-copy{font-size:19px;line-height:2.2}
+.about-copy strong{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-weight:500}
+.about-note{border-top:1px solid var(--line);margin-top:42px;padding-top:22px;font-size:13px;color:var(--muted)}
+.services{background:var(--paper)}
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.service{
+  padding:34px;background:var(--white);border:1px solid var(--line);min-height:260px;
+  position:relative;transition:.25s;
+}
+.service:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(40,35,25,.07)}
+.service:nth-child(2){background:#f5f0e8}
+.service:nth-child(3){background:#f1f3ed}
+.service:nth-child(4){background:#f5ece8}
+.service h3{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:24px;font-weight:500;margin:12px 0}
+.service p{font-size:13px;color:var(--muted);max-width:520px}
+.price{font-family:Georgia,serif;font-size:22px;margin-top:22px}
+.price small{font-family:inherit;font-size:11px;color:var(--muted)}
+.tag{display:inline-block;font-size:10px;letter-spacing:.16em;color:var(--accent);border-bottom:1px solid var(--accent)}
+.other-services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.mini{padding:28px;border:1px solid var(--line);background:transparent}
+.mini h3{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:20px;font-weight:500;margin:10px 0}
+.mini p{font-size:12px;color:var(--muted);margin:0}
+.works{background:var(--white)}
+.work-card{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:var(--paper);overflow:hidden}
+.work-visual{min-height:420px;background:linear-gradient(145deg,#ded8cd,#e9e1d4 50%,#cfd7cf);display:grid;place-items:center;position:relative}
+.work-visual:after{content:"MYU";font-family:Georgia,serif;font-size:clamp(70px,10vw,130px);letter-spacing:.1em;color:rgba(255,255,255,.55)}
+.work-info{padding:55px}
+.work-info h3{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:32px;font-weight:500;line-height:1.4}
+.work-info p{color:var(--muted);font-size:14px}
+.work-link{display:inline-block;margin-top:25px;font-size:12px;letter-spacing:.1em;border-bottom:1px solid var(--ink);padding-bottom:4px}
+.reasons{background:var(--paper)}
+.reason-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.reason{padding:38px 30px;border-right:1px solid var(--line)}
+.reason:last-child{border-right:0}
+.number{font-family:Georgia,serif;font-size:14px;color:var(--accent)}
+.reason h3{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:22px;font-weight:500}
+.reason p{font-size:13px;color:var(--muted)}
+.flow{background:var(--white)}
+.flow-list{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.flow-item{padding:28px 18px;border-top:1px solid var(--ink);position:relative}
+.flow-item:after{content:"→";position:absolute;right:-7px;top:28px;color:var(--accent)}
+.flow-item:last-child:after{display:none}
+.flow-item b{font-family:Georgia,serif;font-weight:400;color:var(--accent);font-size:12px}
+.flow-item h3{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:18px;font-weight:500}
+.flow-item p{font-size:11px;color:var(--muted)}
+.contact{
+  padding:130px 0;background:#e8e0d3;text-align:center;
+  position:relative;overflow:hidden
+}
+.contact:before{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(165,139,99,.35);border-radius:50%;left:-220px;top:-120px}
+.contact h2{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:clamp(32px,5vw,58px);font-weight:500;line-height:1.45;margin:15px 0}
+.contact p{color:#625d54;font-size:14px}
+footer{padding:55px 0 30px;background:var(--ink);color:#eee9df}
+.footer-top{display:flex;justify-content:space-between;gap:30px}
+.footer-logo{font-family:Georgia,serif;font-size:23px;letter-spacing:.16em}
+.footer-note{font-size:11px;color:#aaa59b}
+.copyright{border-top:1px solid rgba(255,255,255,.15);margin-top:45px;padding-top:20px;font-size:9px;color:#aaa59b;letter-spacing:.12em}
+@media(max-width:800px){
+  nav{display:none}
+  .nav{height:62px}
+  .hero{padding-top:110px}
+  .hero-grid,.about-grid,.work-card{grid-template-columns:1fr;gap:35px}
+  .hero-art{min-height:300px}
+  .hero h1{font-size:42px}
+  section{padding:85px 0}
+  .section-head{display:block}
+  .section-intro{margin-top:20px}
+  .service-grid,.other-services{grid-template-columns:1fr}
+  .service{min-height:220px}
+  .work-visual{min-height:280px}
+  .work-info{padding:35px}
+  .reason-grid{grid-template-columns:1fr}
+  .reason{border-right:0;border-bottom:1px solid var(--line)}
+  .flow-list{grid-template-columns:1fr}
+  .flow-item{border-top:1px solid var(--line)}
+  .flow-item:after{content:"↓";right:20px;top:auto;bottom:-15px;z-index:2}
+  .flow-item:last-child:after{display:none}
+  .footer-top{display:block}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">MINACON<small>MINACON, LTD.</small></a>
+    <nav>
+      <a href="#about">ABOUT</a>
+      <a href="#service">SERVICE</a>
+      <a href="#works">WORKS</a>
+      <a href="#flow">FLOW</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">TOTAL PLANNING / MINACON, LTD.</div>
+      <h1 class="serif">思いをつないで、<br>やりたいを<br>かたちにする。</h1>
+      <p class="hero-lead">Web・デザイン・SNS・業務サポートから、日本文化・不動産・アンティークまで。人・モノ・場所をつなぎ、あなたの「やりたい」のカタチづくりをお手伝いします。</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">相談してみる</a>
+        <a class="btn" href="#service">サービスを見る</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="art-card art-main"><span>M</span></div>
+      <div class="art-card art-small"></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div>
+      <div class="eyebrow">ABOUT MINACON</div>
+      <h2 class="serif" style="font-size:clamp(30px,4vw,48px);font-weight:500;line-height:1.5">つくるだけじゃない。<br>一緒に考える。</h2>
+    </div>
+    <div>
+      <p class="about-copy">ミナコンは、<strong>自分たち自身でも事業を行うからこそ分かる、事業者目線</strong>を大切にしています。</p>
+      <p class="about-copy">「ホームページを作りたい」「Instagramを整えたい」「予約の流れをもっと楽にしたい」。そんな小さな「やりたい」を、一つずつ整理して、使えるカタチへ。</p>
+      <p class="about-note">大きな制作会社に頼むほどではない。でも、自分ひとりでは難しい。そんな時に、気軽に相談できる存在でありたいと考えています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="service">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">SERVICE</div>
+        <h2 class="serif">できること。</h2>
+      </div>
+      <p class="section-intro">事業の「伝える」から「整える」まで。必要なところだけでも、まとめてでも。今の状況に合わせてご提案します。</p>
+    </div>
+
+    <div class="service-grid">
+      <article class="service">
+        <span class="tag">WEB / LP</span>
+        <h3>Web・LP制作</h3>
+        <p>事業やサービスの魅力が伝わる、Webサイト・ランディングページを企画から制作まで。</p>
+        <div class="price">¥80,000〜 <small>LP制作</small></div>
+        <div class="price" style="font-size:18px">¥150,000〜 <small>Webサイト制作</small></div>
+      </article>
+
+      <article class="service">
+        <span class="tag">SNS</span>
+        <h3>Instagram運用代行</h3>
+        <p>投稿画像の制作、キャプション、投稿代行など。無理なく続けられるSNS運用を一緒に整えます。</p>
+        <div class="price">¥30,000〜</div>
+      </article>
+
+      <article class="service">
+        <span class="tag">BUSINESS SUPPORT</span>
+        <h3>業務導線・予約の仕組み</h3>
+        <p>フォーム、LINE、メール、自動返信、スプレッドシート、カレンダーなどを組み合わせ、予約・問い合わせを使いやすく。</p>
+        <div class="price">¥50,000〜</div>
+      </article>
+
+      <article class="service">
+        <span class="tag">REAL ESTATE</span>
+        <h3>不動産業務サポート</h3>
+        <p>宅地建物取引士の知識・資格を活かし、物件管理などの不動産業務をサポートします。</p>
+        <div class="price">要相談</div>
+      </article>
+    </div>
+
+    <div class="other-services">
+      <article class="mini">
+        <span class="tag">EXPERIENCE</span>
+        <h3>日本文化・体験ビジネス</h3>
+        <p>茶道・着物など、日本文化を活かした体験サービスの企画・運営。自社でも実践しています。</p>
+      </article>
+      <article class="mini">
+        <span class="tag">ANTIQUE</span>
+        <h3>アンティーク・骨董</h3>
+        <p>古いものが持つ魅力を見つけ、次の人へ。アンティーク・骨董品を取り扱っています。</p>
+      </article>
+      <article class="mini">
+        <span class="tag">TOTAL PLANNING</span>
+        <h3>トータルプランニング</h3>
+        <p>複数のサービスを組み合わせ、事業やプロジェクト全体のカタチづくりをお手伝いします。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="works" id="works">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">WORKS</div>
+        <h2 class="serif">つくったもの。</h2>
+      </div>
+      <p class="section-intro">ミナコン自身の事業や、これまで携わったプロジェクトを少しずつご紹介していきます。</p>
+    </div>
+    <article class="work-card">
+      <div class="work-visual"></div>
+      <div class="work-info">
+        <span class="tag">WEB / EXPERIENCE</span>
+        <h3>Myu｜Kyoto Experience & Babysitting</h3>
+        <p>京都での日本文化体験やベビーシッターサービスを、海外のお客様へ届けるためのWebサイト。</p>
+        <p>企画・構成 / デザイン / Web制作</p>
+        <a class="work-link" href="https://minacon2025-stack.github.io/myu-kyoto/" target="_blank" rel="noopener">VIEW WEBSITE →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="reasons">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">WHY MINACON</div>
+        <h2 class="serif">ミナコンだから、できること。</h2>
+      </div>
+    </div>
+    <div class="reason-grid">
+      <article class="reason">
+        <div class="number">01</div>
+        <h3>事業者目線で考える</h3>
+        <p>自分たちも事業を運営しているからこそ、「作って終わり」ではなく、その先の使いやすさまで考えます。</p>
+      </article>
+      <article class="reason">
+        <div class="number">02</div>
+        <h3>必要なものを、必要なだけ</h3>
+        <p>既存サービスも上手に組み合わせ、できるだけ無駄なコストをかけず、今必要な仕組みを一緒につくります。</p>
+      </article>
+      <article class="reason">
+        <div class="number">03</div>
+        <h3>点を、線につなぐ</h3>
+        <p>Web、SNS、予約、リアルな体験。不ぞろいだったものをつなぎ、一つの事業のカタチへ整えます。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="flow" id="flow">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">FLOW</div>
+        <h2 class="serif">ご依頼の流れ。</h2>
+      </div>
+    </div>
+    <div class="flow-list">
+      <div class="flow-item"><b>01</b><h3>ご相談</h3><p>まずは「こんなことできる？」から。</p></div>
+      <div class="flow-item"><b>02</b><h3>ヒアリング</h3><p>目的やお悩みをお聞きします。</p></div>
+      <div class="flow-item"><b>03</b><h3>ご提案</h3><p>必要な内容と費用をご提案。</p></div>
+      <div class="flow-item"><b>04</b><h3>制作・構築</h3><p>確認しながら一緒に進めます。</p></div>
+      <div class="flow-item"><b>05</b><h3>公開・運用</h3><p>納品後のサポートもご相談ください。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="eyebrow">CONTACT</div>
+    <h2>まずは、<br>「こんなことできる？」から。</h2>
+    <p>まだ内容が決まっていなくても大丈夫です。<br>今ある「やりたい」を聞かせてください。</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn primary" href="mailto:info@example.com">お問い合わせ</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">MINACON, LTD.</div>
+        <div class="footer-note">思いをつないで、やりたいをかたちにする。</div>
+      </div>
+      <div class="footer-note">Web / Design / SNS / Business Support<br>Experience / Real Estate / Antique</div>
+    </div>
+    <div class="copyright">© MINACON, LTD. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+</body>
+</html>
