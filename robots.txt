@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://minacon.netlify.app/sitemap.xml
+Sitemap: https://minacon.jp/sitemap.xml
